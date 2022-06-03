@@ -99,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     if (_formKey.currentState!.validate()) {
                       final loggedIn = await MyAuth.of(
                         context,
-                      ).signIn(
+                      ).logIn(
                         _emailController.text,
                         _passwordController.text,
                       );

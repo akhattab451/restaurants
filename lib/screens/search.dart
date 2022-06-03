@@ -26,7 +26,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        titleSpacing: 0.0,
+        titleSpacing: 4.0,
         title: TextFormField(
           textInputAction: TextInputAction.search,
           onChanged: (value) {
@@ -44,11 +44,8 @@ class _SearchScreenState extends State<SearchScreen> {
       body: StreamBuilder<List<Product>>(
         stream: MyProducts.of(context).products,
         builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
+          if (!snapshot.hasData) {
             return const SizedBox.shrink();
-          }
-          if (snapshot.connectionState == ConnectionState.active) {
-            return const Center(child: CircularProgressIndicator());
           }
           return ListView.builder(
             itemCount: snapshot.data!.length,
@@ -61,8 +58,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       Navigator.pushNamed(
                         context,
                         ProductScreen.routeName,
-                        arguments: snapshot.data![index].restaurants
-                            as List<Restaurant>,
+                        arguments: snapshot.data![index],
                       );
                     },
                   ),

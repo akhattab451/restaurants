@@ -4,7 +4,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:restaurants/bloc.dart';
 
 import 'bloc.dart';
-import 'models/restaurant.dart';
+import 'models.dart';
 import 'screens.dart';
 
 void main() {
@@ -33,7 +33,7 @@ class RestaurantsApp extends StatelessWidget {
           border: OutlineInputBorder(borderRadius: BorderRadius.zero),
         ),
       ),
-      initialRoute: RestaurantsScreen.routeName,
+      initialRoute: SplashScreen.routeName,
       onGenerateRoute: _onGenerateRoute,
     );
   }
@@ -55,6 +55,10 @@ Route<dynamic>? _onGenerateRoute(RouteSettings settings) => MaterialPageRoute(
           case RestaurantScreen.routeName:
             return RestaurantScreen(
               restaurant: settings.arguments as Restaurant,
+            );
+          case ProductScreen.routeName:
+            return ProductScreen(
+              product: settings.arguments as Product,
             );
           case SearchScreen.routeName:
             return MyProducts(

@@ -33,9 +33,17 @@ class RestaurantScreen extends StatelessWidget {
       body: ListView(
         children: [
           CachedNetworkImage(
-            imageUrl: restaurant.image!,
+            imageUrl: restaurant.image ?? '',
             fit: BoxFit.cover,
             placeholder: (c, _) => const CircularProgressIndicator(),
+            errorWidget: (c, _, __) => const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Icon(
+                Icons.image_not_supported,
+                size: 50,
+                color: Colors.grey,
+              ),
+            ),
           ),
           const SizedBox(height: 16.0),
           const Padding(

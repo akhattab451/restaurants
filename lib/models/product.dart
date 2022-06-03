@@ -3,7 +3,7 @@ import 'restaurant.dart';
 class Product {
   final int? id;
   final String name;
-  final List<dynamic> restaurants;
+  final List<Restaurant> restaurants;
 
   const Product({
     required this.id,

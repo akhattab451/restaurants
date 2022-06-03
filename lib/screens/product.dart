@@ -5,7 +5,7 @@ import '../models.dart';
 import '../screens.dart';
 
 class ProductScreen extends StatelessWidget {
-  static const routeName = '/restaurant';
+  static const routeName = '/product';
   final Product product;
   const ProductScreen({
     required this.product,
@@ -40,7 +40,7 @@ class ProductScreen extends StatelessWidget {
                 Navigator.pushNamed(
                   context,
                   MapScreen.routeName,
-                  arguments: [product.restaurants],
+                  arguments: product.restaurants,
                 );
               },
             ),
@@ -52,7 +52,7 @@ class ProductScreen extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             itemCount: product.restaurants.length,
             itemBuilder: (c, i) {
-              return Text(product.restaurants[i]);
+              return Text(product.restaurants[i].name);
             },
           ),
         ],

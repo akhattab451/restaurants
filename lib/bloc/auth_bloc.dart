@@ -20,9 +20,9 @@ class AuthBloc {
     _loggedInSink.add(loggedInPref ?? false);
   }
 
-  Future<bool> signIn(String email, String password) async {
-    final url = Uri.parse('http://192.168.1.27:80/listprodcut/');
-    final response = await http.get(url);
+  Future<bool> logIn(String email, String password) async {
+    final url = Uri.parse('http://192.168.1.27:80/login/$email/$password');
+    final response = await http.post(url);
 
     if (response.statusCode == 200) {
       (await SharedPreferences.getInstance()).setBool('loggedIn', true);
@@ -33,7 +33,7 @@ class AuthBloc {
   }
 
   Future<bool> signUp(Map<String, dynamic> user) async {
-    final url = Uri.parse('http://192.168.1.27:80/listprodcut/');
+    final url = Uri.parse('http://192.168.1.27:80/signup/');
     final response = await http.post(url, body: jsonEncode(user));
 
     return response.statusCode == 200;
