@@ -21,12 +21,6 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   @override
-  void dispose() {
-    MyAuth.of(context).dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: StreamBuilder<bool>(

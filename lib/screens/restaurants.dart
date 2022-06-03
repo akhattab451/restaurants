@@ -13,6 +13,8 @@ class RestaurantsScreen extends StatefulWidget {
 }
 
 class _RestaurantsScreenState extends State<RestaurantsScreen> {
+  late final bloc;
+
   @override
   void initState() {
     super.initState();
@@ -23,8 +25,14 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
   }
 
   @override
+  void didChangeDependencies() {
+    bloc = MyRestaurants.of(context);
+    super.didChangeDependencies();
+  }
+
+  @override
   void dispose() {
-    MyRestaurants.of(context).dispose();
+    bloc.dispose();
     super.dispose();
   }
 

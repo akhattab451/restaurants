@@ -33,13 +33,15 @@ class AuthBloc {
   }
 
   Future<bool> signUp(Map<String, dynamic> user) async {
-    final url = Uri.parse('http://192.168.1.27:80/signup/');
-    final response = await http.post(url, body: jsonEncode(user));
+    final email = user['email'];
+    final password = user['password'];
+    final url = Uri.parse('http://192.168.1.27:80/signUp/$email/$password');
+    final response = await http.post(url);
 
     return response.statusCode == 200;
   }
 
   Future<void> signOut() async {
-    (await SharedPreferences.getInstance()).remove('isLoggedIn');
+    (await SharedPreferences.getInstance()).remove('loggedIn');
   }
 }
