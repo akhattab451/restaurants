@@ -1,0 +1,104 @@
+[
+    {
+        "id": 1,
+        "name": "fool",
+        "resturants": [
+            {
+                "id": 1,
+                "name": "Gad",
+                "longitude": 30.037795267676167,
+                "latitude": 31.209298799403257
+            },
+            {
+                "id": 2,
+                "name": "shabrawy",
+                "longitude": 30.044460765749243,
+                "latitude": 31.194800079814172
+            },
+            {
+                "id": 6,
+                "name": "saklance",
+                "longitude": 30.030713082113127,
+                "latitude": 31.21293493349216
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "ice-coffe",
+        "resturants": [
+            {
+                "id": 7,
+                "name": "dunkin-donuts",
+                "longitude": 30.035098303340106,
+                "latitude": 31.213804143581164
+            },
+            {
+                "id": 8,
+                "name": "starbucks",
+                "longitude": 30.04871188036108,
+                "latitude": 31.228485126440237
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "fries",
+        "resturants": [
+            {
+                "id": 9,
+                "name": "pizza-hut",
+                "longitude": 30.034913099651693,
+                "latitude": 31.213285212975013
+            },
+            {
+                "id": 10,
+                "name": "mcdonalds",
+                "longitude": 30.035947584819574,
+                "latitude": 31.21404471344227
+            },
+            {
+                "id": 5,
+                "name": "bazooka",
+                "longitude": 30.052830271474523,
+                "latitude": 31.196434055225446
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "fried-chicken",
+        "resturants": [
+            {
+                "id": 4,
+                "name": "reem-shawerma",
+                "longitude": 30.031024,
+                "latitude": 31.212623
+            },
+            {
+                "id": 5,
+                "name": "bazooka",
+                "longitude": 30.052830271474523,
+                "latitude": 31.196434055225446
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "late",
+        "resturants": [
+            {
+                "id": 7,
+                "name": "dunkin-donuts",
+                "longitude": 30.035098303340106,
+                "latitude": 31.213804143581164
+            },
+            {
+                "id": 8,
+                "name": "starbucks",
+                "longitude": 30.04871188036108,
+                "latitude": 31.228485126440237
+            }
+        ]
+    }
+]

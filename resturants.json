@@ -1,0 +1,139 @@
+[
+    {
+        "id": 1,
+        "image": "https://allprices.today/wp-content/uploads/2021/09/gad-restaurant-menu1.jpg",
+        "name": "Gad",
+        "longitude": 30.037795267676167,
+        "latitude": 31.209298799403257,
+        "products": [
+            "fool",
+            "ta3mia",
+            "btates",
+            "fteer",
+            "kebda",
+            "sog2"
+        ]
+    },
+    {
+        "id": 2,
+        "image": "https://images.deliveryhero.io/image/talabat/restaurants/shabrawy_logo_636896517748459117.jpg?width=180",
+        "name": "shabrawy",
+        "longitude": 30.044460765749243,
+        "latitude": 31.194800079814172,
+        "products": [
+            "fool",
+            "ta3mia",
+            "btates"
+        ]
+    },
+    {
+        "id": 3,
+        "image": "https://allprices.today/wp-content/uploads/2021/09/gad-restaurant-menu1.jpg",
+        "name": "elza3em",
+        "longitude": 30.034791251415573,
+        "latitude": 31.2116619975537,
+        "products": [
+            "koshary",
+            "3ee4",
+            "roz-blbn",
+            "tagen"
+        ]
+    },
+    {
+        "id": 4,
+        "image": "https://images.deliveryhero.io/image/talabat/restaurants/shabrawy_logo_636896517748459117.jpg?width=180",
+        "name": "reem-shawerma",
+        "longitude": 16.0,
+        "latitude": 34.0,
+        "products": [
+            "shawerma",
+            "t7ina",
+            "btates&ta3mia",
+            "fried-chicken"
+        ]
+    },
+    {
+        "id": 5,
+        "image": "https://allprices.today/wp-content/uploads/2021/09/gad-restaurant-menu1.jpg",
+        "name": "bazooka",
+        "longitude": 30.052830271474523,
+        "latitude": 31.196434055225446,
+        "products": [
+            "burrger",
+            "fried-chicken",
+            "fries"
+        ]
+    },
+    {
+        "id": 6,
+        "image": "https://images.deliveryhero.io/image/talabat/restaurants/shabrawy_logo_636896517748459117.jpg?width=180",
+        "name": "saklance",
+        "longitude": 30.030713082113127,
+        "latitude": 31.21293493349216,
+        "products": [
+            "fool",
+            "ta3mia",
+            "btates",
+            "baba-8anog",
+            "chebsy",
+            "ms23a"
+        ]
+    },
+    {
+        "id": 7,
+        "image": "https://allprices.today/wp-content/uploads/2021/09/gad-restaurant-menu1.jpg",
+        "name": "dunkin-donuts",
+        "longitude": 30.035098303340106,
+        "latitude": 31.213804143581164,
+        "products": [
+            "ice-coffe",
+            "late",
+            "oreo-donut",
+            "bavarian-donut",
+            "choclate-donut",
+            "hot-choclate"
+        ]
+    },
+    {
+        "id": 8,
+        "image": "https://images.deliveryhero.io/image/talabat/restaurants/shabrawy_logo_636896517748459117.jpg?width=180",
+        "name": "starbucks",
+        "longitude": 30.04871188036108,
+        "latitude": 31.228485126440237,
+        "products": [
+            "ice-coffe",
+            "ice-mocka",
+            "star-drink",
+            "dragon-drink",
+            "pink-drink",
+            "late"
+        ]
+    },
+    {
+        "id": 9,
+        "image": "https://allprices.today/wp-content/uploads/2021/09/gad-restaurant-menu1.jpg",
+        "name": "pizza-hut",
+        "longitude": 30.034913099651693,
+        "latitude": 31.213285212975013,
+        "products": [
+            "hatrick",
+            "box-extra",
+            "cheesy-bite-box",
+            "fries",
+            "may-box",
+            "sea-food"
+        ]
+    },
+    {
+        "id": 10,
+        "image": "https://images.deliveryhero.io/image/talabat/restaurants/shabrawy_logo_636896517748459117.jpg?width=180",
+        "name": "mcdonalds",
+        "longitude": 30.035947584819574,
+        "latitude": 31.21404471344227,
+        "products": [
+            "big-mac",
+            "big-tasty",
+            "fries"
+        ]
+    }
+]
