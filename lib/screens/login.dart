@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../services/auth_service.dart';
+import '../bloc.dart';
 import '../util.dart';
 import '../screens.dart';
 
@@ -98,20 +97,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
-                      final state = await Provider.of<AuthService>(
+                      final loggedIn = await MyAuth.of(
                         context,
-                        listen: false,
                       ).signIn(
                         _emailController.text,
                         _passwordController.text,
                       );
 
-                      if (state.data == null) {
-                        await showAlertDialog(
-                          context,
-                          message: state.message!,
-                        );
-                      } else {
+                      if (loggedIn) {
                         showSnackbar(
                           context,
                           message: 'Sign in successful!',
@@ -119,6 +112,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushReplacementNamed(
                           context,
                           RestaurantsScreen.routeName,
+                        );
+                      } else {
+                        await showAlertDialog(
+                          context,
+                          message: 'Invalid Credentials',
                         );
                       }
                     }

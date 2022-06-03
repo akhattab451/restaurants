@@ -4,7 +4,7 @@ import 'package:rxdart/rxdart.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import '../models/models.dart';
+import '../models.dart';
 
 class RestaurantBloc {
   final _restaurants = BehaviorSubject<List<Restaurant>>();

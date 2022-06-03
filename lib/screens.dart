@@ -5,3 +5,4 @@ export 'screens/restaurants.dart';
 export 'screens/search.dart';
 export 'screens/signup.dart';
 export 'screens/splash.dart';
+export 'screens/product.dart';

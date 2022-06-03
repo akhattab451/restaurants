@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../bloc/bloc.dart';
+import '../bloc.dart';
 import '../models/product.dart';
 import '../models/restaurant.dart';
-import 'map.dart';
+import '../screens.dart';
 
 class SearchScreen extends StatefulWidget {
   static const routeName = '/search';
@@ -26,6 +26,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleSpacing: 0.0,
         title: TextFormField(
           textInputAction: TextInputAction.search,
           onChanged: (value) {
@@ -59,7 +60,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     onTap: () {
                       Navigator.pushNamed(
                         context,
-                        MapScreen.routeName,
+                        ProductScreen.routeName,
                         arguments: snapshot.data![index].restaurants
                             as List<Restaurant>,
                       );

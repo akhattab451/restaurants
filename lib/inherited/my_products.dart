@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../bloc/bloc.dart';
+import '../bloc.dart';
 
 class MyProducts extends InheritedWidget {
   final ProductBloc bloc;

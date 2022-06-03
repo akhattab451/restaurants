@@ -1,14 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:provider/provider.dart';
-import 'package:restaurants/bloc/bloc.dart';
+import 'package:restaurants/bloc.dart';
 
-import 'bloc/bloc.dart';
-import 'helpers/database_helper.dart';
+import 'bloc.dart';
 import 'models/restaurant.dart';
 import 'screens.dart';
-import 'services/auth_service.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,36 +20,21 @@ class RestaurantsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        Provider<DatabaseHelper>(
-          create: (context) => DatabaseHelper.instance,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Restaurants App',
+      theme: ThemeData(
+        primarySwatch: Colors.blueGrey,
+        inputDecorationTheme: const InputDecorationTheme(
+          isDense: true,
+          filled: true,
+          fillColor: Colors.white,
+          contentPadding: EdgeInsets.all(10.0),
+          border: OutlineInputBorder(borderRadius: BorderRadius.zero),
         ),
-        Provider<AuthService>(
-          create: (context) => AuthService(
-            helper: Provider.of<DatabaseHelper>(
-              context,
-              listen: false,
-            ),
-          ),
-        ),
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Restaurants App',
-        theme: ThemeData(
-          primarySwatch: Colors.blueGrey,
-          inputDecorationTheme: const InputDecorationTheme(
-            isDense: true,
-            filled: true,
-            fillColor: Colors.white,
-            contentPadding: EdgeInsets.all(10.0),
-            border: OutlineInputBorder(borderRadius: BorderRadius.zero),
-          ),
-        ),
-        initialRoute: SplashScreen.routeName,
-        onGenerateRoute: _onGenerateRoute,
       ),
+      initialRoute: RestaurantsScreen.routeName,
+      onGenerateRoute: _onGenerateRoute,
     );
   }
 }
@@ -61,11 +43,11 @@ Route<dynamic>? _onGenerateRoute(RouteSettings settings) => MaterialPageRoute(
       builder: (context) {
         switch (settings.name) {
           case SplashScreen.routeName:
-            return const SplashScreen();
+            return MyAuth(child: const SplashScreen());
           case SignupScreen.routeName:
-            return const SignupScreen();
+            return MyAuth(child: const SignupScreen());
           case LoginScreen.routeName:
-            return const LoginScreen();
+            return MyAuth(child: const LoginScreen());
           case RestaurantsScreen.routeName:
             return MyRestaurants(
               child: const RestaurantsScreen(),

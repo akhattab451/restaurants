@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
+import '../bloc.dart';
 import '../models/gender.dart';
-import '../services/auth_service.dart';
 import '../util.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -174,21 +173,22 @@ class _SignupScreenState extends State<SignupScreen> {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
                     _formData['gender'] = _gender?.index;
-                    final state = await Provider.of<AuthService>(
+
+                    final signedUp = await MyAuth.of(
                       context,
-                      listen: false,
                     ).signUp(_formData);
-                    if (state.data == null) {
-                      showAlertDialog(
-                        context,
-                        message: state.message!,
-                      );
-                    } else {
+
+                    if (signedUp) {
                       showSnackbar(
                         context,
                         message: 'Sign up successful!',
                       );
                       Navigator.pop(context);
+                    } else {
+                      showAlertDialog(
+                        context,
+                        message: 'Sign up failed',
+                      );
                     }
                   }
                 },

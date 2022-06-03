@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:rxdart/rxdart.dart';
 import 'package:http/http.dart' as http;
-import '../models/models.dart';
+import '../models.dart';
 
 class ProductBloc {
   final _products = BehaviorSubject<List<Product>>();

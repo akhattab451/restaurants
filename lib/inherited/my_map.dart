@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../bloc/bloc.dart';
+import '../bloc.dart';
 
 class MyMap extends InheritedWidget {
   final MapBloc bloc;

@@ -1,13 +1,11 @@
 import 'dart:async';
 
-import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:rxdart/rxdart.dart';
 
 class MapBloc {
-  static const _googleApiKey = 'AIzaSyByezrIoPUmgI3_QNqbbZru_d3adFsTmns';
-
   final _polyline = BehaviorSubject<Polyline>();
   Stream<Polyline> get polyline => _polyline.stream;
   StreamSink<Polyline> get _polylineSink => _polyline.sink;
@@ -39,21 +37,15 @@ class MapBloc {
     await _checkPermissions();
 
     final currentPosition = await Geolocator.getCurrentPosition();
-
-    final result = await PolylinePoints().getRouteBetweenCoordinates(
-      _googleApiKey,
-      PointLatLng(currentPosition.latitude, currentPosition.longitude),
-      PointLatLng(latitude, longitude),
-    );
-
     final route = Polyline(
-        polylineId: const PolylineId('polyline'),
-        points: result.points
-            .map((e) => LatLng(
-                  e.latitude,
-                  e.longitude,
-                ))
-            .toList());
+      polylineId: const PolylineId('polyline1'),
+      color: Colors.blueGrey,
+      width: 5,
+      points: [
+        LatLng(latitude, longitude),
+        LatLng(currentPosition.latitude, currentPosition.longitude)
+      ],
+    );
 
     _polylineSink.add(route);
   }
